@@ -60,4 +60,44 @@ function displayStatistics(stats) {
     container.innerHTML = '';
 
     const colors = ['#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c',
-                    '#e67e22', '#34495e', '#16a085', '#c0392b',
+                    '#e67e22', '#34495e', '#16a085', '#c0392b', '#2980b9', '#27ae60'];
+    
+    const leads = ['I', 'II', 'III', 'aVR', 'aVL', 'aVF', 'V1', 'V2', 'V3', 'V4', 'V5', 'V6'];
+
+    leads.forEach((lead, index) => {
+        if (stats[lead]) {
+            const card = document.createElement('div');
+            card.className = 'stat-card';
+            card.style.borderLeftColor = colors[index];
+            
+            card.innerHTML = `
+                <h3>${lead}</h3>
+                <div class="stat-row">
+                    <span class="stat-label">Min:</span>
+                    <span class="stat-value">${stats[lead].min.toFixed(3)} mV</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Max:</span>
+                    <span class="stat-value">${stats[lead].max.toFixed(3)} mV</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Mean:</span>
+                    <span class="stat-value">${stats[lead].mean.toFixed(3)} mV</span>
+                </div>
+                <div class="stat-row">
+                    <span class="stat-label">Std Dev:</span>
+                    <span class="stat-value">${stats[lead].std.toFixed(3)} mV</span>
+                </div>
+            `;
+            
+            container.appendChild(card);
+        }
+    });
+}
+
+function resetUpload() {
+    document.getElementById('uploadSection').style.display = 'block';
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('resultsSection').style.display = 'none';
+    document.getElementById('fileInput').value = '';
+}
