@@ -4,11 +4,8 @@ A simple web application designed for the rapid visualization of standard WFDB f
 
 This project is built with Python and Streamlit, intended for researchers, students, and medical professionals who need a quick way to visually analyze ECG data without installing local software.
 
-**[ ➡️ LIVE DEMO LINK ⬅️ ](https://your-app-name.onrender.com)**
+**[ ➡️ LIVE DEMO LINK ⬅️ ](https://ecg-visualizer.onrender.com)**
 
-*(Replace `your-app-name.onrender.com` with the actual URL of your Render.com application)*
-
----
 
 ## 🚀 Features
 
